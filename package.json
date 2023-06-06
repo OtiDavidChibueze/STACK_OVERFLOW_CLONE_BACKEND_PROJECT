@@ -1,0 +1,27 @@
+{
+  "name": "stack_overflow_backend_project",
+  "version": "1.0.0",
+  "description": " Stack Overflow is a question and answer website for programmers. It is the flagship site of the Stack Exchange Network. It was created in 2008 by Jeff Atwood and Joel Spolsky. It features questions and answers on certain computer programming topics.",
+  "main": "index.js",
+  "scripts": {
+    "start": "\"nodemon index.js\""
+  },
+  "author": "oti david chibueze",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.2",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "helmet": "^7.0.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.2.2",
+    "mongoose-paginate-v2": "^1.7.1",
+    "morgan": "^1.10.0",
+    "winston": "^3.9.0"
+  }
+}
