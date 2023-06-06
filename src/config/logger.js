@@ -42,7 +42,9 @@ const errorFormat = format.combine(
   format.prettyPrint(),
   format.timestamp(),
   format.printf(({ level, meta, timestamp }) => {
-    return `[${timestamp}] : [${level.toUpperCase()}] : ${meta.message}`;
+    return `[${new Date(
+      timestamp
+    ).toUTCString()}] : [${level.toUpperCase()}] : ${meta.message}`;
   })
 );
 
