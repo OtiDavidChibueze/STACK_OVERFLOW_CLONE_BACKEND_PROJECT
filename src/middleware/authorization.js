@@ -2,12 +2,11 @@
 const jwt = require("jsonwebtoken");
 const { SECRET } = require("../config/keys");
 const { successResponse, errorResponse } = require("../util/responseHelper");
-const logger = require("../config/logger");
+const { logger } = require("../config/logger");
 
 const authorization = (req, res, next) => {
   try {
-    const token = req.cookies.user || req.cookies.admin;
-
+    const token = req.cookies.accessToken;
     if (!token) {
       logger.error("no token provided ");
       return errorResponse(res, 401, "Unauthorized Access");
@@ -19,7 +18,7 @@ const authorization = (req, res, next) => {
         async (err, decodedToken) => {
           if (err) {
             logger.error("token verification error");
-            if (err.name === "TokenExpireDError") {
+            if (err.name === "TokenExpiredError") {
               logger.error("token expired pls login to refresh");
               return errorResponse(
                 res,
@@ -57,3 +56,5 @@ const authorization = (req, res, next) => {
     return errorResponse(res, 400, "invalid token");
   }
 };
+
+module.exports = authorization;
