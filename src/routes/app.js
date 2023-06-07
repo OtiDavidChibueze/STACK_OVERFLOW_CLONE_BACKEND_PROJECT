@@ -22,9 +22,13 @@ app.use(
   })
 );
 
-const User_Router = require("../routes/user");
+const User_Routes = require("../routes/user");
+const Question_Routes = require("../routes/question");
+const Category_Routes = require("../routes/category");
 
-app.use("/api/v1/user", User_Router);
+app.use("/api/v1/user", User_Routes);
+app.use("/api/v1/question", Question_Routes);
+app.use("/api/v1/category", Category_Routes);
 
 app.use(internalErrorLogger);
 
