@@ -3,9 +3,10 @@ const { SECRET } = require("../config/keys");
 
 class TokenHelper {
   /**
-   *
-   * @param {object} user -
-   * @returns
+   *@description - THIS IS USED TO GENERATE TOKEN
+   * @param {object} user - THE USER THE TOKEN IS TO BE ADDED
+   * @returns - RETURNS THE TOKEN
+   * @memberof Token
    */
 
   static async generateToken(user) {
