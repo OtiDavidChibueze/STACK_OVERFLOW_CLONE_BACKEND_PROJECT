@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const { default: mongoose } = require("mongoose");
 
 class HelperFunction {
   /**
@@ -21,6 +22,12 @@ class HelperFunction {
    */
   static async comparePassword(password, hashedPassword) {
     return await bcrypt.compare(password, hashedPassword);
+  }
+
+  static async mongooseIdValidation(id) {
+    const validId = mongoose.isValidObjectId(id);
+
+    if (!validId) throw new Error("invalid mongoose id");
   }
 }
 
