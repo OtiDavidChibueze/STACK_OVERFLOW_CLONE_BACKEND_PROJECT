@@ -101,7 +101,7 @@ class UserService {
       user.password = undefined;
 
       res.cookie("accessToken", accessToken, {
-        maxAge: 1 * 24 * 60 * 1000,
+        maxAge: 1 * 24 * 60 * 24 * 1000,
         httpOnly: true,
       });
 
