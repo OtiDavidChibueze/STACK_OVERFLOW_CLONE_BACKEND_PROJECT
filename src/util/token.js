@@ -16,7 +16,7 @@ class TokenHelper {
     };
 
     const options = {
-      expiresIn: 1 * 24 * 60 * 1000,
+      expiresIn: 1 * 24 * 60 * 24,
     };
 
     try {
