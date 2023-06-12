@@ -1,6 +1,6 @@
 // USER CONTROLLER
 const { successResponse, errorResponse } = require("../util/responseHelper");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 const UserService = require("../service/user");
 
 class UserController {
@@ -18,7 +18,7 @@ class UserController {
 
       const result = await UserService.register(body);
 
-      if (result == 409)
+      if (result.statusCode == 409)
         return errorResponse(res, result.statusCode, result.message);
 
       logger.info(`user created with email : ${JSON.stringify(result)}`);
@@ -56,7 +56,7 @@ class UserController {
       return successResponse(res, result.statusCode, result.message, result);
     } catch (error) {
       logger.error(`Error found while logging in user : ${error.message}`);
-      return errorResponse(res, 500, error.message);
+      return errorResponse(res, 500, "Oops something went wrong");
     }
   }
 
@@ -72,7 +72,7 @@ class UserController {
     try {
       const result = UserService.logOut(req, res);
 
-      if (result == 409)
+      if (result.statusCode == 409)
         return errorResponse(res, result.statusCode, result.message);
 
       logger.info("user logged out successfully");
