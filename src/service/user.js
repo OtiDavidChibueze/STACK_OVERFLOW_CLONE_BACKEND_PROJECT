@@ -2,7 +2,7 @@
 
 const UserModel = require("../model/user");
 const HelperFunction = require("../util/helperFunction");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 const { successResponse, errorResponse } = require("../util/responseHelper");
 const TokenHelper = require("../util/token");
 
@@ -30,7 +30,7 @@ class UserService {
       if (mobileExists) {
         return {
           statusCode: 406,
-          message: "user already exists , please use a  different one",
+          message: "mobile already exists , please use a  different one",
         };
       }
 
