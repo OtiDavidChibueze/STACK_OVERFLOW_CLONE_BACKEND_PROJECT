@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken");
 const { SECRET } = require("../config/keys");
 const { successResponse, errorResponse } = require("../util/responseHelper");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 
 const authorization = (req, res, next) => {
   try {
@@ -33,7 +33,7 @@ const authorization = (req, res, next) => {
             logger.info(decodedToken);
 
             req.user = {
-              id: decodedToken.id,
+              _id: decodedToken.userId,
               role: decodedToken.role,
             };
 
