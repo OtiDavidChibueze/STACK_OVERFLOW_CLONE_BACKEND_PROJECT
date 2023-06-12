@@ -1,5 +1,5 @@
 const { errorResponse } = require("../util/responseHelper");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 
 class schemaValidationHelper {
   /**
