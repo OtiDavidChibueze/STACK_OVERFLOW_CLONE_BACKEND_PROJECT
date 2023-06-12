@@ -1,7 +1,7 @@
 // CATEGORY CONTROLLER
 
 const CategoryService = require("../service/category");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 const { successResponse, errorResponse } = require("../util/responseHelper");
 
 class CategoryController {
