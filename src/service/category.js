@@ -1,7 +1,7 @@
 // CATEGORY SERVICE
 
 const CategoryModel = require("../model/category");
-const { logger } = require("../config/logger");
+const logger = require("../config/logger");
 
 class CategoryService {
   /**
