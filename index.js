@@ -2,7 +2,7 @@
 const server = require("./src/routes/app");
 const connectToDatabase = require("./src/config/db");
 const { PORT } = require("./src/config/keys");
-const { logger } = require("./src/config/logger");
+const logger = require("./src/config/logger");
 
 const port = PORT || 2020;
 
