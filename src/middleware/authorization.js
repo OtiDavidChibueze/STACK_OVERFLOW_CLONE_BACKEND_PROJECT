@@ -17,16 +17,16 @@ const authorization = (req, res, next) => {
         { algorithms: ["HS256"] },
         async (err, decodedToken) => {
           if (err) {
-            logger.error("token verification error");
+            logger.error("Authorization -> Error : token verification error");
             if (err.name === "TokenExpiredError") {
-              logger.error("token expired pls login to refresh");
+              logger.error("Authorization -> Error : token expired pls login");
               return errorResponse(
                 res,
                 401,
                 "token expired pls login to refresh"
               );
             } else {
-              logger.error(err.message);
+              logger.error(`Authorization -> Error : ${err.message}`);
               return errorResponse(res, 400, "invalid token");
             }
           } else {
@@ -52,7 +52,7 @@ const authorization = (req, res, next) => {
       );
     }
   } catch (err) {
-    logger.error(err.message);
+    logger.error(`Authorization -> Error : ${err.message}`);
     return errorResponse(res, 400, "invalid token");
   }
 };
