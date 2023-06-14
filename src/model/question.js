@@ -40,10 +40,6 @@ var questionSchema = new mongoose.Schema(
           type: mongoose.Schema.Types.ObjectId,
           ref: "User",
         },
-        vote: {
-          type: Number,
-          default: 0,
-        },
       },
     ],
   },
