@@ -191,10 +191,11 @@ class QuestionService {
   }
 
   /**
-   *
-   * @param {*} data
-   * @param {*} req
-   * @returns
+   *@description - THIS ENDPOINT IS USED TO ANSWER A QUESTION
+   * @param {*} data - THE DATA OBJECT
+   * @param {*} req - THE REQUEST OBJECT
+   * @returns - RETURNS A JSON OBJECT
+   * @memberof QuestionService
    */
 
   static async answerQuestion(data, req) {
