@@ -4,3 +4,4 @@ logsInternalError
 .env
 *.log
 1.png
+.vscode/settings.json
