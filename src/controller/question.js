@@ -19,7 +19,7 @@ class QuestionController {
       if (result == 409)
         return errorResponse(res, result.statusCode, result.message);
 
-      logger.info(`Gotten all questions : ${JSON.stringify(result)}`);
+      logger.info(`Question Controller -> Info : Gotten all questions : ${JSON.stringify(result.data)}`);
 
       return successResponse(
         res,
@@ -55,8 +55,8 @@ class QuestionController {
       if (result.statusCode == 409)
         return errorResponse(res, result.statusCode, result.message);
 
-      logger.info(
-        `question submitted successfully : ${JSON.stringify(result)}`
+      logger.info( Question Controller -> Info : 
+        `question submitted successfully : ${JSON.stringify(result.data)}`
       );
       return successResponse(
         res,
@@ -96,7 +96,7 @@ class QuestionController {
       if (result.statusCode == 409)
         return errorResponse(res, result.statusCode, result.message);
 
-      logger.info(`user voted up : ${JSON.stringify(result)} `);
+      logger.info(`Question Controller -> user voted up : ${JSON.stringify(result.data)} `);
       return successResponse(
         res,
         result.statusCode,
@@ -133,7 +133,7 @@ class QuestionController {
       if (result == 409)
         return errorResponse(res, result.statusCode, result.message);
 
-      logger.info("Question Controller -> info : user voted down");
+      logger.info(`Question Controller ->   Info : user voted down : ${JSON.stringify(result.data)}` );
 
       return successResponse(
         res,
@@ -165,7 +165,7 @@ class QuestionController {
       if (result.statusCode == 409)
         return errorResponse(res, result.statusCode, result.message);
 
-      logger.info(`Question Controller -> Info : ${result.data} `);
+      logger.info(`Question Controller -> Info : answer submitted : ${result.data} `);
       return successResponse(
         res,
         result.statusCode,
